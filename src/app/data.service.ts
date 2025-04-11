@@ -13,7 +13,8 @@ export class DataService {
   url = 'https://jsonplaceholder.typicode.com/posts';
   
   getPosts(): Observable<Post[]>{
-    return this.http.get<Post[]>(this.url);
+    const params = new HttpParams().set('_limit', 30);
+    return this.http.get<Post[]>(this.url, {params});
   }
 
   getPostById(id: number): Observable<Post[]>{
@@ -22,5 +23,10 @@ export class DataService {
     return this.http.get<Post[]>(this.url, { params });
   }
 
+  addPost() {
+    const post = { id: 101, userID: 1000, title: 'adadadad', body: 'dadadadd' };
+    return this.http.post(this.url, post);
+  }
 
+  
 }
