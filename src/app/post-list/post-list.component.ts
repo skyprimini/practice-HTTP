@@ -15,7 +15,10 @@ export class PostListComponent {
   posts: Post[] = [];
 
   ngOnInit(){
-    this.posts = this.postService.posts;
+    //this.posts = this.postService.posts;
+    this.postService.getPosts().subscribe(
+      data => this.posts = data
+    );
   }
   
 

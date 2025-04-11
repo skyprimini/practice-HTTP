@@ -18,7 +18,11 @@ export class PostDetailComponent {
   post!: Post
   
   ngOnInit(){ 
-    this.post = this.dataService.getPostById(this.id());
+    //this.post = this.dataService.getPostById(this.id());
+    console.log(this.id());
+    this.dataService.getPostById(this.id()).subscribe((data) => {
+      this.post = data[0];
+    });
   }
 }
 
