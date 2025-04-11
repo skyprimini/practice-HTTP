@@ -13,10 +13,5 @@ export class DataService {
 
   getPostById(id:number): Post{
     return this.posts.filter(post => post.id == id)[0];
-    // for(let i = 0; i < posts.length; i++){
-    //   if(posts[i].id == id)
-    //     return posts[i];
-    // }
-    // return posts[0];
   }
 }
