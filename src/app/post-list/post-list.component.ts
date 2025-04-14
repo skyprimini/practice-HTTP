@@ -20,7 +20,7 @@ export class PostListComponent {
       .getPosts()
       .pipe(
         map((posts: Post[]) =>
-          posts.filter((posts) => posts.title.toLowerCase().includes('dolerum'))
+          posts.filter((posts) => posts.title.toLowerCase().includes('dolorum'))
         )
       )
       .subscribe((data) => (this.posts = data));
